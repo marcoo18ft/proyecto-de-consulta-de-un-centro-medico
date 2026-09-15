@@ -5,7 +5,7 @@ VALUES ("22.465.271-3", "pepito", "gonzales"," pepito.gonzales@gmail.com", "temu
 
 
 
-INSERT INTO Paciente (rut, nombre, fecha_nacimiento, email, telefono) 
+INSERT INTO Paciente (rut, nombre, fecha_nacimiento, email, teléfono) 
 VALUES 
 ('15234567-8', 'Pedro Ramirez', '1988-03-12', 'pedro.ramirez@gmail.com', '+56971234567'),
 ('18932145-K', 'Catalina Rojas', '1994-07-25', 'catalina.rojas@yahoo.com', '+56982345678'),
