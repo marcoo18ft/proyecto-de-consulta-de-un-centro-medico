@@ -21,3 +21,18 @@ CREATE TABLE MEDICO
 INSERT INTO MEDICO (rut, nombre, apellido, email, ciudad, salario, especialidad, fecharegistro)
 VALUES ("22.465.271-3", "pepito", "gonzales"," pepito.gonzales@gmail.com", "temuco", 1500000, "neuro_cirugia", "17-06-1990");
 
+
+
+
+
+
+CREATE TABLE Paciente
+
+(
+    rut INT PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    fecha_nacimiento DATE(30) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    teléfono VARCHAR(100) UNIQUE
+   
+);
