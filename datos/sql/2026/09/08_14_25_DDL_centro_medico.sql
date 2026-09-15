@@ -23,7 +23,7 @@ CREATE TABLE Paciente
 (
     rut INT PRIMARY KEY,
     nombre VARCHAR(30) NOT NULL,
-    fecha_nacimiento DATE(30) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
     email VARCHAR(100) UNIQUE,
     teléfono VARCHAR(100) UNIQUE
    
