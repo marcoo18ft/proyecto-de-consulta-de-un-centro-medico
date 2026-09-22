@@ -1,5 +1,5 @@
-CREATE DATABASE clinic_db;
-USE clinic_db;
+CREATE DATABASE centro_medico;
+USE centro_medico;
 
 -- 1. Tabla de Especialidades Médicas
 CREATE TABLE especialidades (
