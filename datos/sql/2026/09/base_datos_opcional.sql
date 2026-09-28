@@ -85,3 +85,19 @@ CREATE TABLE fichas_pacientes (
     CONSTRAINT pk_fichas_pacientes PRIMARY KEY (id_ficha),
     CONSTRAINT fk_fichas_citas FOREIGN KEY (id_cita) REFERENCES citas(id_cita)
 ) COMMENT = 'Ficha clínica asociada a la atención de una cita';
+
+CREATE TABLE historial_clinica (
+    id_historial INT AUTO_INCREMENT,
+    id_ficha INT NOT NULL,
+    id_paciente INT NOT NULL,
+    id_cita INT NOT NULL,
+    motivo VARCHAR(255) NOT NULL,
+    diagnostico VARCHAR(255) NULL,
+    tratamiento VARCHAR(255) NULL,
+    observaciones VARCHAR(255) NULL,
+    fecha_actualizacion DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT pk_historiales_clinicos PRIMARY KEY (id_historial),
+    CONSTRAINT fk_historial_ficha FOREIGN KEY (id_ficha) REFERENCES fichas_pacientes(id_ficha),
+    CONSTRAINT fk_historial_paciente FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente),
+    CONSTRAINT fk_historial_cita FOREIGN KEY (id_cita) REFERENCES citas(id_cita)
+) COMMENT = 'Registro histórico del expediente clínico del paciente';
