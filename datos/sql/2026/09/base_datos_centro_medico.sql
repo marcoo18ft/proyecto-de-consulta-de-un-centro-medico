@@ -73,7 +73,7 @@ CREATE TABLE citas (
     CONSTRAINT fk_citas_pacientes FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente),
     CONSTRAINT fk_citas_profesionales FOREIGN KEY (id_profesional) REFERENCES profesionales(id_profesional),
     CONSTRAINT fk_citas_estados FOREIGN KEY (id_estado) REFERENCES estados(id_estado)
-) COMMENT = 'Citas médicas agendadas';
+) ;
 
 -- 7. Tabla Ficha Paciente (Nueva)
 CREATE TABLE fichas_pacientes (
@@ -84,7 +84,7 @@ CREATE TABLE fichas_pacientes (
     tratamiento TEXT NULL,
     CONSTRAINT pk_fichas_pacientes PRIMARY KEY (id_ficha),
     CONSTRAINT fk_fichas_citas FOREIGN KEY (id_cita) REFERENCES citas(id_cita)
-) COMMENT = 'Ficha clínica asociada a la atención de una cita';
+) ;
 
 CREATE TABLE historial_clinica (
     id_historial INT AUTO_INCREMENT,
@@ -100,4 +100,4 @@ CREATE TABLE historial_clinica (
     CONSTRAINT fk_historial_ficha FOREIGN KEY (id_ficha) REFERENCES fichas_pacientes(id_ficha),
     CONSTRAINT fk_historial_paciente FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente),
     CONSTRAINT fk_historial_cita FOREIGN KEY (id_cita) REFERENCES citas(id_cita)
-) COMMENT = 'Registro histórico del expediente clínico del paciente';
+) ;
